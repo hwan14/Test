@@ -93,7 +93,7 @@ class Indian_poker :
                                 self.pd = input('Com decided to all-in. What do you want to do? (call or die) : ') # 콜이나 다이 둘 중 하나 
                                 Indian_poker.get_cd(self.pd)
                                 break
-                                
+
                               except Exception as e:
                                 print('Error raised : ',e)
                             
@@ -106,7 +106,6 @@ class Indian_poker :
                             elif self.pd == 'die' : # 플레이어 die
                                 break 
                                   
-  
                         while True :
                             try:   
                                 self.pd = input('Com decided to raise {}. What do you want to do? (raise, call or die) : '.format(self.c_bet)) # 레이즈, 콜, 다이 중 하나 
@@ -129,7 +128,7 @@ class Indian_poker :
                             break            
 
                     else : # 플레이어가 올인하면
-                        self.c_bet = self.p.bet
+                        self.c_bet = self.p_bet
                         break
 
                 elif self.com_judge() == 'call' : # 컴퓨터가 콜할때
@@ -137,11 +136,6 @@ class Indian_poker :
                         self.c_bet = self.p_bet
                     else : # 컴퓨터가 콜하는게 플레이어가 베팅한 것보다 부족한 경우 (컴퓨터 입장에선 올인임)
                         self.c_bet = self.com
-
-                    # if self.p_bet == self.c_bet and self.p_bet > 1: # 플레이어가 올인했을 때 컴퓨터가 콜한 경우
-                    #     break
-
-                    
                     
                     if self.p_bet != 1 : # 컴퓨터 콜 > 플레이어 레이즈 > 컴퓨터 콜하는 상황
                         self.c_bet = self.p_bet
@@ -199,4 +193,4 @@ class Indian_poker :
             
         else : # self.player < self.com
             print('Too bad. You lost!')
-                       
+               
